@@ -11,8 +11,8 @@ cd $CURR_FOLDER
 modules=('pinkie')
 for i in "${modules[@]}"
 do
-	if test ! -d "js/vendor/${i}"; then
-		r.js -convert node_modules/${i} js/vendor/${i}
+	if test ! -d "dev/js/vendor/${i}"; then
+		r.js -convert node_modules/${i} dev/js/vendor/${i}
 	fi
 done
 

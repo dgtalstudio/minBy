@@ -10,10 +10,9 @@
   "license": "UNLICENSED",
   "author": "Thiago Lagden <lagden@dgtalstudio.com.br> (http://dgtalstudio.com.br/)",
   "scripts": {
-    "convert": "bin/convert",
-    "build": "npm run convert;r.js -o tools/build.js",
-    "prestart": "npm run convert;gulp",
-    "start": "ws -p 3133"
+    "prod": "env NODE_ENV=production gulp build",
+    "prestart": "bin/convert;gulp",
+    "start": "ws -p 3133 -d dev"
   },
   "dependencies": {
     "jquery": "2.2.3",
@@ -23,7 +22,7 @@
   "devDependencies": {
     "almond": "0.3.2",
     "autoprefixer": "6.3.6",
-    "gulp": "4.0.0-alpha.2",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-jade": "1.1.0",
     "gulp-postcss": "6.1.0",
     "gulp-stylus": "2.3.1",

@@ -9,11 +9,7 @@ const watch = require('./helpers/watch');
 
 const isDev = (process.env.NODE_ENV || 'development') === 'development';
 const stylusPath = join(__dirname, '..', 'stylus');
-let outPath = join(__dirname, '..', 'css');
-
-if (isDev === false) {
-	outPath = join(__dirname, '..', 'public', 'css');
-}
+const outPath = join(__dirname, '..', isDev ? 'dev' : 'public', 'css');
 
 function css() {
 	return gulp

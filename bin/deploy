@@ -1,0 +1,18 @@
+#!/bin/bash
+
+DIR="$( cd -P "$( dirname "$0" )" && pwd )"
+cd $DIR
+cd ..
+CURR_FOLDER=`pwd`
+
+# Root
+cd $CURR_FOLDER
+
+DEPLOY_FOLDER="pasta-do-servidor"
+SERVER="127.0.0.1"
+
+rsync $CURR_FOLDER/. user@$SERVER:$DEPLOY_FOLDER --rsh ssh --recursive --delete --exclude-from $CURR_FOLDER/.rsync-exclude --verbose > .rsync.log
+
+
+cowsay 'Deploy finalizado... Yeahh!!'
+exit 0

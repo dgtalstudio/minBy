@@ -1,11 +1,12 @@
+/* eslint camelcase: 0 */
 /* eslint prefer-arrow-callback: 0 */
 'use strict';
 
 requirejs.config({
 	baseUrl: 'js',
 	paths: {
-		npm: '../node_modules',
-		jquery: 'npm/jquery/src'
+		eventEmitter: '../node_modules/wolfy87-eventemitter/EventEmitter',
+		jquery: '../node_modules/jquery/src'
 	},
 	map: {
 		'jquery/selector': {

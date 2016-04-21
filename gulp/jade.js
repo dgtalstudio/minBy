@@ -7,16 +7,13 @@ const watch = require('./helpers/watch');
 
 const isDev = (process.env.NODE_ENV || 'development') === 'development';
 const jadePath = join(__dirname, '..', 'jade');
-let outPath = join(__dirname, '..');
-
-if (isDev === false) {
-	outPath = join(outPath, 'public');
-}
+const outPath = join(__dirname, '..', isDev ? 'dev' : 'public');
 
 function template() {
 	return gulp
 		.src(join(jadePath, 'index.jade'))
 		.pipe(jade({
+			pretty: isDev,
 			locals: {isDev}
 		}))
 		.pipe(gulp.dest(outPath));

@@ -5,6 +5,6 @@ block content
 
 block scripts
 	if (isDev)
-		script(async, src='npm/requirejs/require.js', data-main='app')
+		script(async, src='node_modules/requirejs/require.js', data-main='js/app')
 	else
 		script(async, src='js/app.min.js')

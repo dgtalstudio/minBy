@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DIR="$( cd -P "$( dirname "$0" )" && pwd )"
+cd $DIR
+cd ..
+CURR_FOLDER=`pwd`
+
+# Root
+cd $CURR_FOLDER
+
+bin/convert
+r.js -o tools/build.js
+
+exit 0
