@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DIR="$( cd -P "$( dirname "$0" )" && pwd )"
+cd $DIR
+cd ..
+CURR_FOLDER=`pwd`
+
+# Root
+cd $CURR_FOLDER
+
+modules=('pinkie')
+for i in "${modules[@]}"
+do
+	if test ! -d "js/vendor/${i}"; then
+		r.js -convert node_modules/${i} js/vendor/${i}
+	fi
+done
+
+exit 0

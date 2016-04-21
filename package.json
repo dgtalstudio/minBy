@@ -1,0 +1,62 @@
+{
+  "name": "minby",
+  "version": "1.0.0",
+  "description": "Seu condomínio na era digital",
+  "keywords": [
+    "one",
+    "condominio",
+    "sistema"
+  ],
+  "license": "UNLICENSED",
+  "author": "Thiago Lagden <lagden@dgtalstudio.com.br> (http://dgtalstudio.com.br/)",
+  "scripts": {
+    "convert": "bin/convert",
+    "build": "npm run convert;r.js -o tools/build.js",
+    "prestart": "npm run convert;gulp",
+    "start": "ws -p 3133"
+  },
+  "dependencies": {
+    "jquery": "2.2.3",
+    "pinkie": "2.0.4",
+    "wolfy87-eventemitter": "4.3.0"
+  },
+  "devDependencies": {
+    "almond": "0.3.2",
+    "autoprefixer": "6.3.6",
+    "gulp": "4.0.0-alpha.2",
+    "gulp-jade": "1.1.0",
+    "gulp-postcss": "6.1.0",
+    "gulp-stylus": "2.3.1",
+    "lagden-promisify": "2.0.0",
+    "requirejs": "2.2.0",
+    "xo": "0.14.0"
+  },
+  "engines": {
+    "node": ">=5.1.0"
+  },
+  "xo": {
+    "ignore": [
+      "dev/js/{,*/}*.js"
+    ],
+    "envs": [
+      "es6"
+    ],
+    "global": [
+      "window",
+      "document",
+      "define",
+      "require",
+      "requirejs"
+    ],
+    "esnext": true
+  },
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgtalstudio/minBy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dgtalstudio/minBy/issues"
+  },
+  "homepage": "https://github.com/dgtalstudio/minBy#readme"
+}
