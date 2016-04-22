@@ -3,6 +3,9 @@
 const join = require('path').join;
 const gulp = require('gulp');
 const stylus = require('gulp-stylus');
+const nib = require('nib');
+const jeet = require('jeet');
+const rupture = require('rupture');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const watch = require('./helpers/watch');
@@ -15,6 +18,11 @@ function css() {
 	return gulp
 		.src(join(stylusPath, 'app.styl'))
 		.pipe(stylus({
+			use: [
+				nib(),
+				jeet(),
+				rupture()
+			],
 			compress: !isDev
 		}))
 		.pipe(postcss([

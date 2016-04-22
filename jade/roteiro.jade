@@ -1,0 +1,21 @@
+#bg.condominio
+
+svg#polys.polys(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
+	polygon#white0.poly.poly--white(points='0,0 100,0 100,50 0,50')
+	polygon#white1.poly.poly--white.hidden(points='0,0 50,0 100,50 0,50')
+	polygon#white2.poly.poly--white.hidden(points='0,0 50,0 50,50 0,50')
+	polygon#white3.poly.poly--white.hidden(points='0,0 50,0 0,50 0,50')
+	polygon#white4.poly.poly--white.hidden(points='0,0 50,0 0,0 0,0')
+	polygon#red0.poly.poly--red(points='100,0 100,0 100,50 100,50')
+	polygon#red1.poly.poly--red.hidden(points='50,0 100,0 100,50 50,50')
+	polygon#red2.poly.poly--red.hidden(points='0,0 100,0 100,50 0,50')
+
+#logo.logo
+	svg.logo__img
+		use(xlink:href='#minBy')
+
+.slogan#slogan
+	h1.slogan__txt Feito para facilitar a sua vida e a de seu condomínio
+
+- for(var i = 0; i < 100; i++)
+	p #{i}

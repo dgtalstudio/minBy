@@ -6,30 +6,15 @@
 'use strict';
 
 define([
-	'jquery/event',
+	'svgLocalstorage',
 	'src/lib/broadcast',
-	'src/lib/promise'
-], function ($, broadcast) {
-	var $xxx = $('#xxx');
+	'src/lib/promise',
+	'src/scroll'
+], function (svgLocalstorage, broadcast) {
 	var ee = broadcast.instance();
-
-	function testPromise() {
-		return new Promise(function (resolve, reject) {
-			setTimeout(function () {
-				resolve('yeaahh!!');
-			}, 3000);
+	svgLocalstorage('images/sprite.svg', 'svg-1.0.4')
+		.then(function (svg) {
+			document.body.insertAdjacentHTML('afterbegin', svg);
+			ee.emit('scroll.init');
 		});
-	}
-
-	ee.on('awesome', function (dados) {
-		$xxx[0].textContent = dados;
-	});
-
-	$xxx.on('click', function () {
-		ee.emit('awesome', 'clicaram aqui!!');
-		testPromise()
-			.then(function (r) {
-				ee.emit('awesome', r);
-			});
-	});
 });
