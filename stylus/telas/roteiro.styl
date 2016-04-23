@@ -1,0 +1,64 @@
+.scroll-size
+	height: 2000px
+	overflow: hidden
+	background-color: #B22028
+
+.condominio
+	display: block
+	width: 100%
+	height: 120vh
+	background-image: url('../images/condominio-mobile.jpg')
+	background-size: cover
+	position: fixed
+	top: 0
+	left: 0
+	+above(500px)
+		background-image: url('../images/condominio.jpg')
+
+.polys
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 100vh
+	> .poly
+		perspective 600
+		fill white
+		width 100%
+		height 100%
+		&--red
+			fill #B22028
+
+.logo
+	display: flex
+	justify-content: center
+	width: 100%
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+
+.logo__img
+	width: 200px
+
+.slogan
+	position: fixed
+	top: 0
+	right: -100%
+	display: flex
+	align-items: center
+	width: 50%
+	height: 100%
+	box-sizing: border-box
+	padding: 5vw
+
+.slogan__txt
+	text-transform: uppercase
+	color: white
+	font-size: 5.5vw
+	line-height: 10vw
+	word-wrap: break-word
+
+.hidden
+	visibility: hidden
+	display: none
