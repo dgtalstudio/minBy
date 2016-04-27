@@ -1,11 +1,26 @@
 extends ./layout.jade
 
 block content
-	include ./includes/roteiro.jade
-	include ./includes/info.jade
+	.static
+		svg.static__logo
+			use(xlink:href='#minBy')
+		h1.static__slogan
+			span.static__slogan--red Seu condomínio na era 
+			span.static__slogan--gray digital
+		h2.static__slogan.static__slogan--small Em breve
+
+		.static__disclaimer
+			a(href="http://dgtalstudio.com.br")
+				span Mais um site espetacular feito com a 
+				svg.icon__dgs(preserveAspectRatio='none')
+					use(xlink:href='#dgs')
+
+		svg.static__svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
+			polygon.tri(points='0,50 100,0 100,50')
+			polygon.tri.tri--red(points='0,25 100,50 0,50')
 
 block scripts
 	if (isDev)
-		script(async, src='node_modules/requirejs/require.js', data-main='js/app')
+		script(async, src='node_modules/requirejs/require.js', data-main='js/static')
 	else
-		script(async, src='js/app.min.js')
+		script(async, src='js/static.min.js')

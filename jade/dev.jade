@@ -1,0 +1,11 @@
+extends ./layout.jade
+
+block content
+	include ./includes/roteiro.jade
+	include ./includes/info.jade
+
+block scripts
+	if (isDev)
+		script(async, src='node_modules/requirejs/require.js', data-main='js/app')
+	else
+		script(async, src='js/app.min.js')

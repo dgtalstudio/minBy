@@ -1,0 +1,31 @@
+{
+	"chamada": "Seu condomínio na era <span>digital</span>",
+	"apresenta": "O <strong>minBy</strong> é um sistema desenvolvido para auxiliar a todos que fazem parte de um condomínio, através de controle da entrada de visitantes, agendamento de mudanças, reservas de áreas, etc. Tudo realizado on-line e apresentados de forma prática, dinâmica e segura.",
+	"features": [
+		{
+			"icon": "bullseye",
+			"title": "Cadastro Único",
+			"txt": "Integrável com equipamentos de controle de acesso de veículos e biometria, oferece em um único lugar o cadastro dos condominos e seus respectivos veículos, facilitando o dia a dia do seu condominio."
+		}, {
+			"icon": "check",
+			"title": "Comunicação Direta",
+			"txt": "O contato entre síndico, zelador e condôminos ficou mais dinâmico. Todas as informações importantes circulam de forma rápida, evitando o stresse do dia a dia pela falta de comunicação."
+		}, {
+			"icon": "clipboard",
+			"title": "Prestadores de Serviços e Visitantes",
+			"txt": "Autorizar a entrada de prestadores de serviços e visitantes ficou muito mais prático e seguro! O próprio condômino autoriza on-line a entrada dos mesmos em sua unidade."
+		}, {
+			"icon": "comments",
+			"title": "Reservas de Áreas",
+			"txt": "Num só clique, o condômino faz a reserva de espaços sem sair do conforto de sua casa. A portaria é informada automaticamente da data do evento e tem acesso à lista das pessoas autorizadas."
+		}, {
+			"icon": "envelope",
+			"title": "Controle de Correspondência",
+			"txt": "O condômino recebe da portaria, por e-mail ou SMS, avisos da chegada de correspondências na portaria: cartas, boletos, caixas, jornais, revistas, etc."
+		}, {
+			"icon": "devices",
+			"title": "Arquivos Digitais",
+			"txt": "Atas, Balancetes, Regulamento Interno, Plantas dentre outros arquivos estarão disponivel para leitura e download a todos os condôminos."
+		}
+	]
+}

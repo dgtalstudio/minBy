@@ -10,8 +10,6 @@ requirejs.config({
 		utils: '../node_modules/lagden-utils/dist/index',
 		TweenLite: '../node_modules/gsap/src/uncompressed/TweenLite',
 		TimelineLite: '../node_modules/gsap/src/uncompressed/TimelineLite',
-		TweenMax: '../node_modules/gsap/src/uncompressed/TweenMax',
-		TimelineMax: '../node_modules/gsap/src/uncompressed/TimelineMax',
-		EasePack: '../node_modules/gsap/src/uncompressed/easing/EasePack'
+		CSSPlugin: '../node_modules/gsap/src/uncompressed/plugins/CSSPlugin'
 	}
 });

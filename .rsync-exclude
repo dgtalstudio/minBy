@@ -1,0 +1,23 @@
+*.rdb
+*.md
+.*
+gulp*
+package.json
+/bin
+/data
+/dev
+/gulp
+/jade
+/stylus
+/tools
+/node_modules
+
+# Arquivos gerados pelo SO
+.DS_Store
+thumbs.db
+.arch-params
+.bzr
+_darcs
+.hg
+.monotone
+CVS

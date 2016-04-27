@@ -10,5 +10,6 @@ cd $CURR_FOLDER
 
 bin/convert
 r.js -o tools/build.js
+r.js -o tools/build-static.js
 
 exit 0

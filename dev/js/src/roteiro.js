@@ -10,8 +10,9 @@ define([
 	'src/lib/broadcast',
 	'src/helpers/poly',
 	'utils',
-	'TweenMax',
-	'TimelineLite'
+	'TweenLite',
+	'TimelineLite',
+	'CSSPlugin'
 ], function (broadcast, helper, utils, Tween, Timeline) {
 	var ee = broadcast.instance();
 	var scrollSize = utils.qS('#scrollSize');
@@ -42,10 +43,6 @@ define([
 		return instances;
 	}
 
-	function updateInfo() {
-		console.log('updateInfo', Number(tl.progress().toFixed(2)), tl.duration());
-	}
-
 	function roteiro() {
 		var ticking = false;
 		var bg;
@@ -67,7 +64,6 @@ define([
 		logo = utils.qS('#logo');
 		slogan = utils.qS('#slogan');
 		tl = new Timeline({
-			onUpdate: updateInfo,
 			paused: true
 		});
 

@@ -1,92 +1,134 @@
-.closeDetalhe
-  position: fixed
-  box-sizing: border-box
-  padding: 0
-  width: 1.5em
-  height: @width
-  z-index: 1000
-  top: 20px
-  right: 20px
-  overflow: hidden
-  font-size: 1.5em
-  color: $cor.white
-  border-radius: 5px
+.contentInfo
+	padding 30px
 
-.contentBody
-  padding: 20px
+.info__title
+	margin: 0 0 15px 0
+	font-size: 1.5em
+	color: cor.red
+	box-sizing: border-box
+	text-transform: uppercase
+	> span
+		color: cor.gray
 
-.contentBody__title
-  padding: 0
-  margin: 0
-  margin-bottom: 10px
-  font-size: 1.5em
+.media
+	display: flex
 
-.contentDetalhe
-  position: fixed
-  top: 0
-  left: 0
-  z-index: 100
-  width: 100%
-  height: 100%
-  background-color: $cor.mainBg
-  box-sizing: border-box
-  padding: 20px
-  padding-top: 80px
-  overflow: auto
+.media__figure
+	position: relative
+	flex: 1 0 70px
+	margin-bottom: 10px
+	+above('l')
+		margin-right: 10px
 
-.boxesStatus
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: center
-  +below(3)
-    justify-content: flex-start
+.media__body
+	flex: 1 1 auto
 
-.boxesStatus--mb
-  margin-bottom: 20px
+.features
+	display: flex
+	flex-wrap: wrap
 
-.status
-  display: flex
-  margin: 5px
-  flex: 0 1 calc(115px - 10px)
-  flex-direction: column
-  justify-content: flex-start
-  align-items: center
-  +below(3)
-    flex: 0 1 calc(33% - 10px)
+.features__box
+	margin 20px 10px
+	flex-direction: column
+	align-items: center
+	flex: 1 1 calc(100% - 20px)
+	+above('l')
+		align-items: flex-start
+		flex-direction: row
+		flex: 1 1 calc(50% - 20px)
 
-.status__img
-  background: $cor.disable
-  color: white
-  border-radius: 5px
-  padding: 20px
-  +below(3)
-    > .iconstatus
-      width: 30px
-      height: @width
+.features__title
+	margin: 0 0 15px 0
+	font-size: 5vw
+	color: cor.red
+	box-sizing: border-box
+	text-transform: uppercase
+	text-align: center
+	+above('m')
+		font-size: 2.5vw
+	+above('l')
+		font-size: 1.3em
+		text-align: left
 
-.status__info
-  text-align center
-  > p
-    margin: 0
-    padding: 0
+.features__txt
+	margin: 0 0 10px 0
+	font-size: 0.9em
+	&:last-of-type
+		margin-bottom: 0
 
-.status__title
-  color: $cor.disable
-  margin: 5px auto
-  font-size: 1.3em
-  +below(3)
-    font-size: 1.1em
+.icon
+	width: 70px
+	height: @width
 
-// Color status
-// true
-.status__img--true
-  background: $cor.active
-.status__title--true
-  color: $cor.active
+.icon__circle
+	fill: cor.red
 
-// false
-.status__img--false
-  background: $cor.error
-.status__title--false
-  color: $cor.error
+.icon__feature
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 5px
+	margin: auto
+	width: 35px
+	height: @width
+	fill: cor.white
+
+.footer
+	width 100%
+	height 100vh
+	justify-content: center
+	position relative
+	display flex
+	> svg
+		position: absolute
+		bottom: 0
+		left: 0
+		z-index: 1
+		> .tri
+			fill: cor.gray
+			width: 100%
+			height: 100%
+			&--red
+				fill: cor.red
+
+.footer__phone
+	position: relative
+	font-size: 2em
+	align-self: center
+	z-index: 3
+	> .icon__phone
+	> span
+		margin-right 10px
+		display inline-block
+		vertical-align middle
+	> span
+		text-shadow: 0px 0px 5px cor.white
+
+.footer__disclaimer
+	position: absolute
+	z-index: 2
+	left: 20px
+	bottom: @left
+	color: cor.white
+	> a
+		unstyledLink()
+		> .icon__dgs
+		> span
+			margin-right 5px
+			display inline-block
+			vertical-align middle
+		> span
+			display none
+		> .icon__dgs
+			fill: cor.white
+			width: 100px
+			height: 40px
+		+above('m')
+			> span
+				display inline-block
+
+.icon__phone
+	width: 35px
+	height: @width
+	fill: cor.red

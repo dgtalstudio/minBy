@@ -3,6 +3,7 @@
 const join = require('path').join;
 const gulp = require('gulp');
 const jade = require('gulp-jade');
+const info = require('../data/info.json');
 const watch = require('./helpers/watch');
 
 const isDev = (process.env.NODE_ENV || 'development') === 'development';
@@ -14,7 +15,10 @@ function template() {
 		.src(join(jadePath, 'index.jade'))
 		.pipe(jade({
 			pretty: isDev,
-			locals: {isDev}
+			locals: {
+				isDev,
+				info
+			}
 		}))
 		.pipe(gulp.dest(outPath));
 }

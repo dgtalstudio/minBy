@@ -10,10 +10,20 @@
 define([], function () {
 	var html = document.documentElement;
 	var body = document.body;
+	var supportPageOffset = window.pageXOffset !== undefined;
 	var isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
 
 	function getScrollY() {
-		return window.pageYOffset || isCSS1Compat ? html.scrollTop : body.scrollTop;
+		var x = 0;
+		var y = 0;
+		if (supportPageOffset) {
+			x = window.pageXOffset;
+			y = window.pageYOffset;
+		} else {
+			x = isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft;
+			y = isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+		}
+		return y;
 	}
 
 	function getDocHeight() {
@@ -27,13 +37,15 @@ define([], function () {
 	}
 
 	function getPoints(p) {
-		return Array.prototype.slice.call(p.points)
-			.map(function (o) {
-				return [o.x, o.y];
-			})
-			.reduce(function (a, b) {
-				return a.concat(b);
-			});
+		var xy = [];
+		var len = p.points.numberOfItems;
+		for (var i = 0; i < len; i++) {
+			var item = p.points.getItem(i);
+			xy.push([item.x, item.y]);
+		}
+		return xy.reduce(function (a, b) {
+			return a.concat(b);
+		});
 	}
 
 	function convertToPoints(arr, el) {

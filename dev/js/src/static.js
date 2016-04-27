@@ -7,20 +7,10 @@
 
 define([
 	'svgLocalstorage',
-	'src/lib/broadcast',
-	'src/info',
-	'src/roteiro',
 	'src/lib/promise'
-], function (svgLocalstorage, broadcast, info) {
-	var ee = broadcast.instance();
+], function (svgLocalstorage) {
 	svgLocalstorage('images/sprite.svg', 'svg-1.0.11')
 		.then(function (svg) {
 			document.body.insertAdjacentHTML('afterbegin', svg);
 		});
-
-	ee.on('info.load', function () {
-		ee.emit('roteiro.init');
-	});
-
-	info();
 });
