@@ -1,5 +1,20 @@
+.tri-svg
+	@extends $triangle
+	position: static
+	height 15%
+	display block
+
+.tri-svg--big
+	height 30%
+
 .contentInfo
 	padding 30px
+
+.contentInfo--red
+	background-color: cor.red
+
+.contentInfo--gray
+	background-color: cor.gray
 
 .info__title
 	margin: 0 0 15px 0
@@ -10,89 +25,47 @@
 	> span
 		color: cor.gray
 
-.media
-	display: flex
+.info__chamada--white
+.info__title--white
+	color: cor.white
 
-.media__figure
+.info__chamada--gray
+.info__title--gray
+	color: cor.gray
+
+.icon__wrap
 	position: relative
-	flex: 1 0 70px
-	margin-bottom: 10px
-	+above('l')
-		margin-right: 10px
 
-.media__body
-	flex: 1 1 auto
-
-.features
-	display: flex
-	flex-wrap: wrap
-
-.features__box
-	margin 20px 10px
-	flex-direction: column
-	align-items: center
-	flex: 1 1 calc(100% - 20px)
-	+above('l')
-		align-items: flex-start
-		flex-direction: row
-		flex: 1 1 calc(50% - 20px)
-
-.features__title
-	margin: 0 0 15px 0
-	font-size: 5vw
-	color: cor.red
-	box-sizing: border-box
-	text-transform: uppercase
-	text-align: center
-	+above('m')
-		font-size: 2.5vw
-	+above('l')
-		font-size: 1.3em
-		text-align: left
-
-.features__txt
-	margin: 0 0 10px 0
-	font-size: 0.9em
-	&:last-of-type
-		margin-bottom: 0
-
-.icon
+.icon__wrap
+.icon__circle
 	width: 70px
 	height: @width
 
-.icon__circle
+.icon__inside
+	width: 30px
+	height: @width
+
+.icon__inside--center
+	align()
+
+.icon--red
 	fill: cor.red
 
-.icon__feature
-	position: absolute
-	top: 0
-	left: 0
-	right: 0
-	bottom: 5px
-	margin: auto
-	width: 35px
-	height: @width
+.icon--white
 	fill: cor.white
 
-.footer
+.icon--gray
+	fill: cor.gray
+
+.contato
+	position relative
 	width 100%
 	height 100vh
-	justify-content: center
-	position relative
 	display flex
-	> svg
-		position: absolute
-		bottom: 0
-		left: 0
-		z-index: 1
-		> .tri
-			fill: cor.gray
-			width: 100%
-			height: 100%
-			&--red
-				fill: cor.red
+	justify-content: center
+	flex-direction: column
 
-.footer__phone
+.contato__phone
 	position: relative
 	font-size: 2em
 	align-self: center
@@ -102,33 +75,19 @@
 		margin-right 10px
 		display inline-block
 		vertical-align middle
-	> span
-		text-shadow: 0px 0px 5px cor.white
+	> .icon__phone
+		width: 35px
+		height: @width
+		fill: cor.red
+
+.footer
+	position relative
+	width 100%
+	height 60vh
+
+.footer__svg
+	@extends $triangle
 
 .footer__disclaimer
-	position: absolute
-	z-index: 2
-	left: 20px
-	bottom: @left
-	color: cor.white
-	> a
-		unstyledLink()
-		> .icon__dgs
-		> span
-			margin-right 5px
-			display inline-block
-			vertical-align middle
-		> span
-			display none
-		> .icon__dgs
-			fill: cor.white
-			width: 100px
-			height: 40px
-		+above('m')
-			> span
-				display inline-block
+	@extends $disclaimer
 
-.icon__phone
-	width: 35px
-	height: @width
-	fill: cor.red

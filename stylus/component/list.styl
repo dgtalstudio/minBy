@@ -1,0 +1,45 @@
+.lista
+	display: flex
+	flex-wrap: wrap
+
+.lista__box
+	margin 20px 10px
+	flex-direction: column
+	align-items: center
+	flex: 0 1 calc(100% - 20px)
+	+above('m')
+		align-items: flex-start
+		flex-direction: row
+		flex: 0 1 calc(50% - 20px)
+
+.lista__title
+	margin: 0 0 15px 0
+	font-size: 5vw
+	color: cor.red
+	box-sizing: border-box
+	text-transform: uppercase
+	text-align: center
+	+above('m')
+		font-size: 2.5vw
+	+above('l')
+		font-size: 1.3em
+		text-align: left
+
+.lista__txt
+	margin: 0 0 10px 0
+	font-size: 0.9em
+	&:last-of-type
+		margin-bottom: 0
+
+.lista__title--red
+.lista__txt--red
+	color: cor.red
+
+.lista__title--gray
+.lista__txt--gray
+	color: cor.gray
+
+.lista__title--white
+.lista__txt--white
+	color: cor.white
+

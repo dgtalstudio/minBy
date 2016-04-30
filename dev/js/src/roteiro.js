@@ -3,6 +3,7 @@
 /* eslint camelcase: 0 */
 /* eslint prefer-arrow-callback: 0 */
 /* eslint prefer-template: 0 */
+/* eslint babel/object-shorthand: 0 */
 
 'use strict';
 
@@ -12,7 +13,8 @@ define([
 	'utils',
 	'TweenLite',
 	'TimelineLite',
-	'CSSPlugin'
+	'CSSPlugin',
+	'EndArrayPlugin'
 ], function (broadcast, helper, utils, Tween, Timeline) {
 	var ee = broadcast.instance();
 	var scrollSize = utils.qS('#scrollSize');
@@ -27,12 +29,17 @@ define([
 		tl.progress(progress, false).pause();
 	}
 
+	function updateArray(a, el) {
+		helper.convertToPoints(a, el);
+	}
+
 	function polyTween(a, b, el, d) {
 		d = d || 1;
-		b.onUpdate = function () {
-			helper.convertToPoints(a, el);
-		};
-		return Tween.to(a, d, b);
+		return Tween.to(a, d, {
+			endArray: b,
+			onUpdate: updateArray,
+			onUpdateParams: [a, el]
+		});
 	}
 
 	function createTweenInstance(list, el) {
@@ -46,13 +53,16 @@ define([
 	function roteiro() {
 		var ticking = false;
 		var bg;
+		var arrow;
 		var logo;
+		var logoArrow;
 		var slogan;
 		var polys;
 		var poly;
 		var pointsAnimation = {};
 		var polyInstancesWhite;
 		var polyInstancesRed;
+		var arrowTween;
 
 		// Elements
 		bg = utils.qS('#bg');
@@ -61,11 +71,10 @@ define([
 			white: utils.qS('#white0'),
 			red: utils.qS('#red0')
 		};
+		logoArrow = utils.qS('#logoArrow');
 		logo = utils.qS('#logo');
+		arrow = utils.qS('#arrowDownIco');
 		slogan = utils.qS('#slogan');
-		tl = new Timeline({
-			paused: true
-		});
 
 		// Points
 		pointsAnimation.white = helper.fillPoints('#polys > .poly--white');
@@ -75,15 +84,21 @@ define([
 		polyInstancesWhite = createTweenInstance(pointsAnimation.white, poly.white);
 		polyInstancesRed = createTweenInstance(pointsAnimation.red, poly.red);
 
+		tl = new Timeline({
+			paused: true
+		});
+
 		tl
+			.to(arrow, 1, {y: '+=300', force3D: true})
+			.set([arrow], {display: 'none'})
 			.add(polyInstancesWhite[0])
-			.add([polyInstancesWhite[1], Tween.to(logo, 1, {opacity: 0})])
+			// .add([polyInstancesWhite[1], Tween.to(logo, 1, {opacity: 0})])
+			.add(polyInstancesWhite[1])
 			.add(polyInstancesWhite[2])
 			.add(polyInstancesWhite[3])
 			.add([polyInstancesRed[0], Tween.to(slogan, 1.5, {x: '-200%'})])
 			.add([polyInstancesRed[1], Tween.to(slogan, 1.5, {y: '-100%'})])
-			.set([bg, polys, logo, slogan], {display: 'none'})
-			.to(bg, 7, {y: '-20vh'}, 0)
+			.set([logoArrow, bg, polys, slogan], {display: 'none'})
 		;
 
 		window.addEventListener('scroll', function () {

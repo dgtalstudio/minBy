@@ -12,10 +12,10 @@
   "scripts": {
     "prod": "env NODE_ENV=production gulp build",
     "prestart": "bin/convert;gulp",
-    "start": "ws -p 3133 -d dev"
+    "start": "ws -p 3131 -d dev"
   },
   "dependencies": {
-    "gsap": "1.18.3",
+    "gsap": "1.18.4",
     "jquery": "2.2.3",
     "lagden-utils": "2.1.3",
     "pinkie": "2.0.4",

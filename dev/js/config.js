@@ -10,6 +10,7 @@ requirejs.config({
 		utils: '../node_modules/lagden-utils/dist/index',
 		TweenLite: '../node_modules/gsap/src/uncompressed/TweenLite',
 		TimelineLite: '../node_modules/gsap/src/uncompressed/TimelineLite',
-		CSSPlugin: '../node_modules/gsap/src/uncompressed/plugins/CSSPlugin'
+		CSSPlugin: '../node_modules/gsap/src/uncompressed/plugins/CSSPlugin',
+		EndArrayPlugin: '../node_modules/gsap/src/uncompressed/plugins/EndArrayPlugin'
 	}
 });

@@ -12,7 +12,7 @@ const outPath = join(__dirname, '..', isDev ? 'dev' : 'public');
 
 function template() {
 	return gulp
-		.src(join(jadePath, 'index.jade'))
+		.src(join(jadePath, '{index,dev}.jade'))
 		.pipe(jade({
 			pretty: isDev,
 			locals: {

@@ -1,16 +1,55 @@
+$triangle
+	position: absolute
+	bottom: 0
+	left: 0
+	z-index: 1
+	width 100%
+	height 35%
+	+above('m')
+		height 40%
+	> .tri
+		&--gray
+			fill: cor.gray
+		&--red
+			fill: cor.red
+		&--white
+			fill: cor.white
+
+$disclaimer
+	position: absolute
+	z-index: 2
+	left: 10px
+	bottom: @left
+	color: cor.white
+	> a
+		unstyledLink()
+		> .icon__dgs
+		> span
+			display inline-block
+			vertical-align middle
+		> span
+			display none
+		> .icon__dgs
+			fill: cor.white
+			width: 80px
+			height: 30px
+		+above('m')
+			> span
+				display inline-block
+
 html
-  width: 100%
-  height: 100%
-  touch-action: manipulation
-  color: cor.gray
-  background-color: cor.white
-  font-size: 1em
-  line-height: 1.4
+	width: 100%
+	height: 100%
+	touch-action: manipulation
+	color: cor.gray
+	background-color: cor.white
+	font-size: 1em
+	line-height: 1.4
 
 body
-  font-family: 'Abel', sans-serif
-  width: 100%
-  height: 100%
-  margin: 0
-  padding: 0
-  word-wrap: break-word
+	width: 100%
+	height: 100%
+	margin: 0
+	padding: 0
+	word-wrap: break-word
+	font-family: 'Abel', sans-serif

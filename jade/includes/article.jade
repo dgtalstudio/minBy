@@ -1,0 +1,68 @@
+svg.tri-svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
+	polygon.tri--red(points='0,0 100,0 0,50')
+
+article.contentInfo
+	h1.info__title!= info[0].titulo
+	p!= info[0].chamada
+	.features
+		each v in info[0].features
+			section.features__box.media
+				.features__figure.media__figure
+					.icon__wrap
+						svg.icon__circle.icon--red
+							use(xlink:href='#circle')
+						svg.icon__inside.icon__inside--center.icon--white
+							use(xlink:href='##{v.icon}')
+				.media__body
+					h2.features__title #{v.title}
+					p.features__txt #{v.txt}
+
+svg.tri-svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
+	polygon.tri--red(points='0,0 100,50 0,50')
+
+article.contentInfo.contentInfo--red
+	h1.info__title.info__title--white!= info[1].titulo
+	p.info__chamada--white!= info[1].chamada
+	.lista
+		each v in info[1].features
+			section.lista__box
+				.media.media--center
+					.media__figure
+						svg.icon__inside.icon--white
+							use(xlink:href='##{v.icon}')
+					.media__body
+						p.lista__txt.lista__txt--white #{v.txt}
+
+svg.tri-svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
+	polygon.tri--red(points='0,0 100,0 100,50 0,50')
+	polygon.tri--red(points='0,0 100,0 0,50')
+	polygon.tri--gray(points='0,50 100,0 100,50')
+
+article.contentInfo.contentInfo--gray
+	h1.info__title!= info[2].titulo
+	p.info__chamada--white!= info[2].chamada
+	.lista
+		each v in info[2].features
+			section.lista__box
+				.media.media--center
+					.media__figure
+						svg.icon__inside.icon--red
+							use(xlink:href='##{v.icon}')
+					.media__body
+						p.lista__txt.lista__txt--white #{v.txt}
+
+svg.tri-svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
+	polygon.tri--gray(points='0,0 100,0 100,50')
+
+article.contentInfo
+	h1.info__title!= info[3].titulo
+	p!= info[3].chamada
+	.lista
+		each v in info[3].features
+			section.lista__box
+				.media.media--center
+					.media__figure
+						svg.icon__inside.icon--red
+							use(xlink:href='##{v.icon}')
+					.media__body
+						p.lista__txt #{v.txt}

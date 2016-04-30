@@ -13,7 +13,7 @@ define([
 	'src/lib/promise'
 ], function (svgLocalstorage, broadcast, info) {
 	var ee = broadcast.instance();
-	svgLocalstorage('images/sprite.svg', 'svg-1.0.11')
+	svgLocalstorage('images/sprite.svg', 'svg-1.0.12')
 		.then(function (svg) {
 			document.body.insertAdjacentHTML('afterbegin', svg);
 		});
