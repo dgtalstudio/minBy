@@ -11,6 +11,7 @@ requirejs.config({
 		TweenLite: '../node_modules/gsap/src/uncompressed/TweenLite',
 		TimelineLite: '../node_modules/gsap/src/uncompressed/TimelineLite',
 		CSSPlugin: '../node_modules/gsap/src/uncompressed/plugins/CSSPlugin',
-		EndArrayPlugin: '../node_modules/gsap/src/uncompressed/plugins/EndArrayPlugin'
+		EndArrayPlugin: '../node_modules/gsap/src/uncompressed/plugins/EndArrayPlugin',
+		gmaps: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCtGiZenbRCFVDi1nE8Ux8hbjOq2puUp7c'
 	}
 });

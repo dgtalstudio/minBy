@@ -1,5 +1,29 @@
-section.contato
-	.contato__phone
-		svg.icon__phone
-			use(xlink:href='#phone')
-		span 11 3021-4500
+article.contentInfo
+	h1.info__title Contato
+	.contato__wrap
+
+		section.contato__info.contato__item
+			p.features__txt Gostaria de saber mais sobre nós ou tirar alguma dúvida? Aguardamos o seu contato.
+			p.info
+				svg.icon__phone
+					use(xlink:href='#phone')
+				span 11 3021-4500
+			#map-canvas.map-canvas
+
+		form#contatoFrm.contato__frm.contato__item(method='post', action='/contato/envia')
+			label.vh(for='stuff') Outros
+			input#stuff.vh(type='text', name='stuff', title='Outros')
+			.frm__input
+				label(for='frmNome') Nome
+				input#frmNome.required(placeholder='Informe seu nome', type='text', name='nome', title='Nome')
+			.frm__input
+				label(for='frmEmail') E-mail
+				input#frmEmail.required(placeholder='Informe seu e-mail', type='email', name='email', title='E-mail')
+			.frm__input
+				label(for='frmTelefone') Telefone
+				input#frmTelefone(placeholder='Informe seu telefone', type='tel', name='telefone', title='Telefone')
+			.frm__input
+				label(for='frmMsg') Mensagem
+				textarea#frmMsg(rows='4', cols='30', placeholder='Deixe uma mensagem', name='msg', title='Mensagem')
+			.frm__btn
+				button.btn.orange.button(type='submit') Enviar

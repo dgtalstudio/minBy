@@ -10,7 +10,8 @@ define([
 	'src/lib/broadcast',
 	'src/info',
 	'src/roteiro',
-	'src/lib/promise'
+	'src/lib/promise',
+	'./maps'
 ], function (svgLocalstorage, broadcast, info) {
 	var ee = broadcast.instance();
 	svgLocalstorage('images/sprite.svg', 'svg-1.0.12')

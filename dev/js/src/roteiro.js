@@ -90,15 +90,14 @@ define([
 
 		tl
 			.to(arrow, 1, {y: '+=300', force3D: true})
-			.set([arrow], {display: 'none'})
+			.set(arrow, {display: 'none'})
+			.set(poly.red, {opacity: 0.8})
 			.add(polyInstancesWhite[0])
-			// .add([polyInstancesWhite[1], Tween.to(logo, 1, {opacity: 0})])
 			.add(polyInstancesWhite[1])
-			.add(polyInstancesWhite[2])
-			.add(polyInstancesWhite[3])
-			.add([polyInstancesRed[0], Tween.to(slogan, 1.5, {x: '-200%'})])
-			.add([polyInstancesRed[1], Tween.to(slogan, 1.5, {y: '-100%'})])
-			.set([logoArrow, bg, polys, slogan], {display: 'none'})
+			.add([polyInstancesWhite[2], polyInstancesRed[0]])
+			.add([polyInstancesRed[1], Tween.to(slogan, 1.5, {x: '-250%'})])
+			.add(Tween.to(poly.red, 1.5, {opacity: 1}))
+			.set([logoArrow, bg, polys], {display: 'none'})
 		;
 
 		window.addEventListener('scroll', function () {

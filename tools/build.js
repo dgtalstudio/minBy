@@ -25,6 +25,9 @@
 	useStrict: true,
 	baseUrl: '../dev/js',
 	mainConfigFile: '../dev/js/config.js',
+	paths: {
+		gmaps: 'empty:'
+	},
 	name: '../node_modules/almond/almond',
 	include: ['app'],
 	out: '../public/js/app.min.js'

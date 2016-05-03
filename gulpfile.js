@@ -26,5 +26,6 @@ gulp.task('watch', gulp.parallel(
 gulp.task('build', gulp.series(
 	'default',
 	almond.task,
-	cp.task
+	cp.task.bind(cp, 'images/**/*', 'images'),
+	cp.task.bind(cp, '*.ico', '.')
 ));

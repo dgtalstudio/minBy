@@ -1,14 +1,28 @@
 .tri-svg
 	@extends $triangle
 	position: static
-	height 15%
+	height 15vw
 	display block
+
+.tri-svg--top
+.tri-svg--bottom
+	transform: scaleY(1.01)
+
+.tri-svg--top
+	transform-origin: top center
+
+.tri-svg--bottom
+	transform-origin: 0 0
 
 .tri-svg--big
 	height 30%
 
 .contentInfo
+	center(1200px)
 	padding 30px
+	box-sizing: border-box
+	position: relative
+	z-index: 2
 
 .contentInfo--red
 	background-color: cor.red
@@ -57,28 +71,48 @@
 .icon--gray
 	fill: cor.gray
 
-.contato
+.contato__wrap
 	position relative
-	width 100%
-	height 100vh
 	display flex
-	justify-content: center
+	// flex-wrap: wrap
 	flex-direction: column
+	// align-items: flex-start
+	+above('l')
+		flex-direction: row
 
-.contato__phone
-	position: relative
-	font-size: 2em
-	align-self: center
-	z-index: 3
-	> .icon__phone
-	> span
-		margin-right 10px
-		display inline-block
-		vertical-align middle
-	> .icon__phone
-		width: 35px
-		height: @width
-		fill: cor.red
+.contato__item
+	flex: 0 1 100%
+	margin-bottom: 20px
+	+above('l')
+		flex: 0 1 50%
+		margin-bottom: 0px
+
+.contato__info
+	padding-right: 20px
+	> .info
+		> .icon__phone
+		> span
+			margin-right 10px
+			display inline-block
+			vertical-align middle
+		> .icon__phone
+			width: 15px
+			height: @width
+			fill: cor.red
+
+.map-canvas
+	width 100%
+	height 340px
+
+.frm__input
+	margin-bottom 10px
+	> label
+		font-size 0.9em
+		display block
+		margin-bottom 5px
+
+.frm__btn
+	text-align right
 
 .footer
 	position relative

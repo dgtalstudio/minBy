@@ -3,13 +3,13 @@
 const join = require('path').join;
 const gulp = require('gulp');
 
-const imagePath = join(__dirname, '..', 'dev', 'images');
-const outPath = join(__dirname, '..', 'public', 'images');
+const srcPath = join(__dirname, '..', 'dev');
+const outPath = join(__dirname, '..', 'public');
 
-function copy() {
+function copy(src, dest) {
 	return gulp
-		.src(join(imagePath, '/**/*'))
-		.pipe(gulp.dest(outPath));
+		.src(join(srcPath, src))
+		.pipe(gulp.dest(join(outPath, dest)));
 }
 
 exports.task = copy;
