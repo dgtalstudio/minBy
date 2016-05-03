@@ -10,4 +10,4 @@ block scripts
 	if (isDev)
 		script(async, src='node_modules/requirejs/require.js', data-main='js/app')
 	else
-		script(async, src='js/app.min.js')
+		script(async, src='js/app.min.js?rnd=#{Math.random()}')

@@ -4,6 +4,7 @@
 
 requirejs.config({
 	baseUrl: 'js',
+	waitSeconds: 120,
 	paths: {
 		eventEmitter: '../node_modules/wolfy87-eventemitter/EventEmitter',
 		svgLocalstorage: '../node_modules/svg-localstorage/svg-localstorage',
@@ -12,6 +13,8 @@ requirejs.config({
 		TimelineLite: '../node_modules/gsap/src/uncompressed/TimelineLite',
 		CSSPlugin: '../node_modules/gsap/src/uncompressed/plugins/CSSPlugin',
 		EndArrayPlugin: '../node_modules/gsap/src/uncompressed/plugins/EndArrayPlugin',
-		gmaps: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCtGiZenbRCFVDi1nE8Ux8hbjOq2puUp7c'
+		async: './src/lib/async',
+		googl: './src/lib/googl',
+		propertyParser: './src/lib/propertyParser'
 	}
 });

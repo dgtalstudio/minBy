@@ -8,33 +8,38 @@
 
 'use strict';
 
-define(['gmaps'], function () {
-	var ll = new google.maps.LatLng(-23.5566237, -46.6877229);
-	var mapCanvas = document.getElementById('map-canvas');
-	var mapOptions = {
-		zoom: 17,
-		center: ll,
-		mapTypeControl: false,
-		panControl: false,
-		scrollwheel: false,
-		zoomControl: true
-	};
-	var map = new google.maps.Map(mapCanvas, mapOptions);
-	var marker = new google.maps.Marker({
-		position: ll,
-		map: map,
-		title: 'minBy'
+define(['src/helpers/lazy'], function (lazy) {
+	lazy((document.location.protocol === 'https:' ? 'https' : 'http') + '://www.google.com/jsapi', function () {
+		google.load('maps', 3, {other_params: 'key=AIzaSyCtGiZenbRCFVDi1nE8Ux8hbjOq2puUp7c', callback: initialize});
 	});
-	var infowindow = new google.maps.InfoWindow({
-		content: [
-			'<div class="infowindow-tex">',
-			'<h3>minBy</h3>',
-			'<p>Rua Aspicuelta, 223 - Vila Madalena - 05433-010 - São Paulo, SP</p>',
-			'</div>'
-		].join('')
-	});
-	google.maps.event.addListener(marker, 'click', function () {
-		infowindow.open(map, marker);
-	});
-// google.maps.event.addDomListener(window, 'load', initialize);
+
+	function initialize() {
+		var ll = new google.maps.LatLng(29.9752502, 31.0675272);
+		var mapCanvas = document.getElementById('map-canvas');
+		var mapOptions = {
+			zoom: 17,
+			center: ll,
+			mapTypeControl: false,
+			panControl: false,
+			scrollwheel: false,
+			zoomControl: true
+		};
+		var map = new google.maps.Map(mapCanvas, mapOptions);
+		var marker = new google.maps.Marker({
+			position: ll,
+			map: map,
+			title: 'minBy'
+		});
+		var infowindow = new google.maps.InfoWindow({
+			content: [
+				'<div class="infowindow-tex">',
+				'<h3>minBy</h3>',
+				'<p>Great Sphinx of Giza</p>',
+				'</div>'
+			].join('')
+		});
+		google.maps.event.addListener(marker, 'click', function () {
+			infowindow.open(map, marker);
+		});
+	}
 });
