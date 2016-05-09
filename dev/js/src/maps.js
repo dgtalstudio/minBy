@@ -8,13 +8,18 @@
 
 'use strict';
 
-define(['src/helpers/lazy'], function (lazy) {
-	lazy((document.location.protocol === 'https:' ? 'https' : 'http') + '://www.google.com/jsapi', function () {
-		google.load('maps', 3, {other_params: 'key=AIzaSyCtGiZenbRCFVDi1nE8Ux8hbjOq2puUp7c', callback: initialize});
-	});
+define(['src/lib/lazy'], function (lazy) {
+	var protocol = (document.location.protocol === 'https:' ? 'https' : 'http');
+	lazy(protocol + '://www.google.com/jsapi')
+		.then(function () {
+			google.load('maps', 3, {
+				other_params: 'key=AIzaSyCtGiZenbRCFVDi1nE8Ux8hbjOq2puUp7c',
+				callback: initialize
+			});
+		});
 
 	function initialize() {
-		var ll = new google.maps.LatLng(29.9752502, 31.0675272);
+		var ll = new google.maps.LatLng(-23.539252, -46.7062753);
 		var mapCanvas = document.getElementById('map-canvas');
 		var mapOptions = {
 			zoom: 17,
@@ -34,7 +39,7 @@ define(['src/helpers/lazy'], function (lazy) {
 			content: [
 				'<div class="infowindow-tex">',
 				'<h3>minBy</h3>',
-				'<p>Great Sphinx of Giza</p>',
+				'<p>Rua Aibi, 102 - Conjunto 21<br>São Paulo - SP</p>',
 				'</div>'
 			].join('')
 		});

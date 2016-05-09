@@ -26,7 +26,8 @@ textarea
 	@extend $formCommon
 	appearance: none
 	box-sizing: border-box
-	border: 1px solid darken(cor.gray, 20%)
+	// border: 1px solid darken(cor.gray, 20%)
+	border: 0
 	width: 100%
 	padding: 10px
 	white-space: normal
@@ -68,3 +69,5 @@ select[multiple]
 	input
 		&:invalid
 			background-color: cor.red !important
+			color: cor.white
+			placeholder(cor.white)

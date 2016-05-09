@@ -8,12 +8,19 @@ CURR_FOLDER=`pwd`
 # Root
 cd $CURR_FOLDER
 
+# LOCAL_FOLDER="./public"
+# DEPLOY_FOLDER="~/public_html"
+# SERVER="ftp.minby.hospedagemdesites.ws"
+
 LOCAL_FOLDER="./public"
-DEPLOY_FOLDER="~/public_html"
-SERVER="ftp.minby.hospedagemdesites.ws"
+DEPLOY_FOLDER="~/webapps/minby"
+SERVER="minby.dgtalstudio.com"
+
+~/webapps/minby
 
 npm run prod
-rsync $LOCAL_FOLDER/. minby@$SERVER:$DEPLOY_FOLDER --rsh ssh --recursive --delete --exclude-from $CURR_FOLDER/.rsync-exclude --verbose > .rsync.log
+# rsync $LOCAL_FOLDER/. minby@$SERVER:$DEPLOY_FOLDER --rsh ssh --recursive --delete --exclude-from $CURR_FOLDER/.rsync-exclude --verbose > .rsync.log
+rsync $LOCAL_FOLDER/. $SERVER:$DEPLOY_FOLDER --rsh ssh --recursive --delete --exclude-from $CURR_FOLDER/.rsync-exclude --verbose > .rsync.log
 
 
 cowsay 'Deploy finalizado... Yeahh!!'

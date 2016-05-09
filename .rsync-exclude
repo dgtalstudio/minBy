@@ -11,6 +11,9 @@ package.json
 /stylus
 /tools
 /node_modules
+/public/vendor
+/public/composer.lock
+/public/.gitignore
 
 # Arquivos gerados pelo SO
 .DS_Store

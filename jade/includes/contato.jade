@@ -2,28 +2,30 @@ article.contentInfo
 	h1.info__title Contato
 	.contato__wrap
 
-		section.contato__info.contato__item
-			p.features__txt Gostaria de saber mais sobre nós ou tirar alguma dúvida? Aguardamos o seu contato.
-			p.info
+		section.contato__item.contato__info
+			p.contato__child.features__txt Gostaria de saber mais sobre nós ou tirar alguma dúvida? Aguardamos o seu contato.
+			p.contato__child.info
 				svg.icon__phone
 					use(xlink:href='#phone')
 				span 11 3021-4500
-			#map-canvas.map-canvas
+				br
+				| Rua Aibi, 102 - Conjunto 21 - São Paulo - SP
+			.contato__child#map-canvas.map-canvas
 
-		form#contatoFrm.contato__frm.contato__item(method='post', action='/contato/envia')
-			label.vh(for='stuff') Outros
-			input#stuff.vh(type='text', name='stuff', title='Outros')
+		form.contato__item#contatoFrm.contato__frm(method='post', action='email.php')
+			label.vh(for='minbyV') Outros
+			input#minbyV.vh(type='text', name='minbyV', title='Outros')
 			.frm__input
 				label(for='frmNome') Nome
-				input#frmNome.required(placeholder='Informe seu nome', type='text', name='nome', title='Nome')
+				input#frmNome.required(type='text', placeholder='Informe seu nome', name='nome', title='Nome', required)
 			.frm__input
 				label(for='frmEmail') E-mail
-				input#frmEmail.required(placeholder='Informe seu e-mail', type='email', name='email', title='E-mail')
+				input#frmEmail.required(type='email', placeholder='Informe seu e-mail', name='email', title='E-mail', required)
 			.frm__input
 				label(for='frmTelefone') Telefone
-				input#frmTelefone(placeholder='Informe seu telefone', type='tel', name='telefone', title='Telefone')
+				input#frmTelefone(type='tel', placeholder='Informe seu telefone', name='telefone', title='Telefone', required)
 			.frm__input
 				label(for='frmMsg') Mensagem
-				textarea#frmMsg(rows='4', cols='30', placeholder='Deixe uma mensagem', name='msg', title='Mensagem')
+				textarea#frmMsg(rows='4', cols='30', placeholder='Deixe uma mensagem', name='msg', title='Mensagem', required)
 			.frm__btn
-				button.btn.orange.button(type='submit') Enviar
+				button.btn.btn--red(type='submit', formnovalidate) Enviar

@@ -8,18 +8,18 @@
 
 'use strict';
 
-define(function () {
+define(['src/lib/promise'], function () {
 	var h = document.getElementsByTagName('head')[0];
 
-	function addScript(src, cb) {
+	function addScript(src) {
 		var s = document.createElement('script');
 		s.type = 'text/javascript';
 		s.async = true;
 		s.src = src;
-		if (cb) {
-			s.onload = cb;
-		}
 		h.insertBefore(s, h.lastChild);
+		return new Promise(function (resolve, reject) {
+			s.onload = resolve;
+		});
 	}
 
 	return addScript;

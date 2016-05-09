@@ -17,7 +17,9 @@
   "dependencies": {
     "gsap": "1.18.4",
     "jquery": "2.2.3",
+    "lagden-growl": "1.0.3",
     "lagden-utils": "2.1.3",
+    "lagden-validation": "0.2.0",
     "pinkie": "2.0.4",
     "scrollmagic": "2.0.5",
     "svg-localstorage": "1.0.0",

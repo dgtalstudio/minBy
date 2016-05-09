@@ -13,8 +13,12 @@ requirejs.config({
 		TimelineLite: '../node_modules/gsap/src/uncompressed/TimelineLite',
 		CSSPlugin: '../node_modules/gsap/src/uncompressed/plugins/CSSPlugin',
 		EndArrayPlugin: '../node_modules/gsap/src/uncompressed/plugins/EndArrayPlugin',
-		async: './src/lib/async',
-		googl: './src/lib/googl',
-		propertyParser: './src/lib/propertyParser'
+		growl: '../node_modules/lagden-growl/dist/growl',
+		formValidation: '../node_modules/lagden-validation/dist/index'
+	},
+	map: {
+		growl: {
+			'lagden-utils/dist/index': 'utils'
+		}
 	}
 });

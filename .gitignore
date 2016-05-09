@@ -1,6 +1,5 @@
 dev/css
 dev/*.htm*
-public
 node_modules
 
 # Others

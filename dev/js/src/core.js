@@ -6,13 +6,15 @@
 'use strict';
 
 define([
+	'growl',
 	'svgLocalstorage',
 	'src/lib/broadcast',
 	'src/info',
+	'src/form',
 	'src/roteiro',
-	'src/lib/promise',
-	'./maps'
-], function (svgLocalstorage, broadcast, info) {
+	'src/maps',
+	'src/lib/promise'
+], function (growl, svgLocalstorage, broadcast, info, form) {
 	var ee = broadcast.instance();
 	svgLocalstorage('images/sprite.svg', 'svg-1.0.12')
 		.then(function (svg) {
