@@ -12,7 +12,7 @@ define([
 	'src/info',
 	'src/form',
 	'src/roteiro',
-	// 'src/maps',
+	'src/maps',
 	'src/menu'
 ], function (growl, svgLocalstorage, broadcast, info, form) {
 	var ee = broadcast.instance();
