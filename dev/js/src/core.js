@@ -12,11 +12,11 @@ define([
 	'src/info',
 	'src/form',
 	'src/roteiro',
-	'src/maps',
-	'src/lib/promise'
+	// 'src/maps',
+	'src/menu'
 ], function (growl, svgLocalstorage, broadcast, info, form) {
 	var ee = broadcast.instance();
-	svgLocalstorage('images/sprite.svg', 'svg-1.0.12')
+	svgLocalstorage('images/sprite.svg', 'svg-1.0.16')
 		.then(function (svg) {
 			document.body.insertAdjacentHTML('afterbegin', svg);
 		});

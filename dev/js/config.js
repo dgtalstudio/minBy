@@ -13,6 +13,7 @@ requirejs.config({
 		TimelineLite: '../node_modules/gsap/src/uncompressed/TimelineLite',
 		CSSPlugin: '../node_modules/gsap/src/uncompressed/plugins/CSSPlugin',
 		EndArrayPlugin: '../node_modules/gsap/src/uncompressed/plugins/EndArrayPlugin',
+		ScrollToPlugin: '../node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin',
 		growl: '../node_modules/lagden-growl/dist/growl',
 		formValidation: '../node_modules/lagden-validation/dist/index'
 	},

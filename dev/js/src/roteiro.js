@@ -84,8 +84,19 @@ define([
 		polyInstancesWhite = createTweenInstance(pointsAnimation.white, poly.white);
 		polyInstancesRed = createTweenInstance(pointsAnimation.red, poly.red);
 
+		var yoyo;
+		function loop() {
+			yoyo.reversed(!yoyo.reversed());
+		}
+
+		yoyo = Tween.to(arrow, 0.5, {y: '+=20', onComplete: loop, onReverseComplete: loop});
+
 		tl = new Timeline({
-			paused: true
+			paused: true,
+			onStart: function () {
+				console.log('start...');
+				yoyo.kill();
+			}
 		});
 
 		tl

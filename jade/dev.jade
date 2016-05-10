@@ -1,10 +1,23 @@
 extends ./layout.jade
 
 block content
+	#menu.menu
+		.menuLista
+			svg.menuLista__logo
+				use(xlink:href='#minBy')
+			- var menuLinks = {digital: 'Digital', gestao: 'Gestão', portal: 'Portal', beneficios: 'Benefícios', contato: 'Contato'}
+			nav#menuNav.menuLista__nav
+				each v, k in menuLinks
+					a.menuLista__item(href='##{k}')
+						span #{v}
+	#hamburguer.hamburguer(data-method='add')
+			svg.hamburguer__icon
+				use(xlink:href='#sort')
 	include ./includes/roteiro.jade
 	include ./includes/article.jade
 	include ./includes/contato.jade
-	include ./includes/footer.jade
+	include ./includes/footer.jade				
+	#obfuscator.obfuscator(data-method='remove')
 
 block scripts
 	if (isDev)

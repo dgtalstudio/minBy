@@ -54,3 +54,35 @@ body
 	padding: 0
 	word-wrap: break-word
 	font-family: 'Abel', sans-serif
+
+.obfuscator
+	position: fixed
+	background-color: transparent
+	top: 0
+	left: 0
+	height: 100%
+	width: 100%
+	z-index: 4
+	visibility: hidden
+	transition-property: background-color
+	transition-duration: .2s
+	transition-timing-function: cubic-bezier(.4,0,.2,1)
+	&--visible
+		background-color: rgba(0,0,0,.5)
+		visibility: visible
+
+.hamburguer
+	box-sizing: border-box
+	margin: 0
+	padding: 10px
+	position: fixed
+	top 5px
+	left 5px
+	z-index 5
+	background-color: rgba(cor.gray, 0.9)
+	cursor pointer
+
+.hamburguer__icon
+	fill: cor.white
+	width 35px
+	height @width

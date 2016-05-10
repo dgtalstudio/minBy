@@ -2,5 +2,5 @@
 'use strict';
 
 require(['config'], function () {
-	require(['src/core']);
+	require(['src/lib/promise', 'src/core']);
 });

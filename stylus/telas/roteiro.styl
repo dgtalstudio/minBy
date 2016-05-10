@@ -56,20 +56,21 @@
 .slogan
 	position: fixed
 	top: 0
-	right: -100%
-	width: 50%
+	right: -160%
+	width: 70%
 	height: 100%
 	box-sizing: border-box
-	padding: 5vw
 	z-index: 4
 
 .slogan__txt
 	align(vertical)
 	text-transform: uppercase
 	color: white
-	font-size: 5vw
+	font-size: 2em
 	word-wrap: break-word
 	text-align: center
+	+above(500px)
+		font-size: 3.3em
 
 .hidden
 	visibility: hidden
