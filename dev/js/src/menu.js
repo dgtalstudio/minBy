@@ -2,6 +2,7 @@
 /* eslint no-unused-vars: 0 */
 /* eslint camelcase: 0 */
 /* eslint prefer-arrow-callback: 0 */
+/* eslint babel/object-shorthand: 0 */
 
 'use strict';
 
@@ -12,8 +13,10 @@ define([
 	'CSSPlugin',
 	'ScrollToPlugin'
 ], function (broadcast, utils, Tween) {
+	var ee = broadcast.instance();
 	var menu = utils.qS('#menu');
 	var menuNav = utils.qS('#menuNav');
+	var menuNavH = utils.qS('#menuNavHorizontal');
 	var hamburguer = utils.qS('#hamburguer');
 	var obfuscator = utils.qS('#obfuscator');
 
@@ -33,17 +36,24 @@ define([
 		return bubbling(target.parentElement, selector);
 	}
 
+	function gsapFinish() {
+		ee.emit('menu.navega', 'addEventListener');
+	}
+
 	function nav(event) {
-		var t = bubbling(event.target, '.menuLista__item');
+		var t = bubbling(event.target, '.linkNavega');
 		if (t) {
 			event.preventDefault();
 			var go = utils.qS(t.hash);
 			if (go) {
 				onToggle(null);
+				ee.emit('menu.navega', 'removeEventListener');
 				Tween.to(window, 3, {
 					scrollTo: {
-						y: go.offsetTop
-					}
+						y: go.offsetTop,
+						onAutoKill: gsapFinish
+					},
+					onComplete: gsapFinish
 				});
 			}
 		}
@@ -52,4 +62,5 @@ define([
 	hamburguer.addEventListener('click', onToggle);
 	obfuscator.addEventListener('click', onToggle);
 	menuNav.addEventListener('click', nav);
+	menuNavH.addEventListener('click', nav);
 });

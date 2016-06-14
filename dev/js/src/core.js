@@ -9,21 +9,22 @@ define([
 	'growl',
 	'svgLocalstorage',
 	'src/lib/broadcast',
-	'src/info',
+	// 'src/info',
 	'src/form',
-	'src/roteiro',
+	// 'src/roteiro',
 	'src/maps',
-	'src/menu'
-], function (growl, svgLocalstorage, broadcast, info, form) {
+	'src/menu',
+	'src/lib/sticky-header'
+], function (growl, svgLocalstorage, broadcast, form) {
 	var ee = broadcast.instance();
 	svgLocalstorage('images/sprite.svg', 'svg-1.0.16')
 		.then(function (svg) {
 			document.body.insertAdjacentHTML('afterbegin', svg);
 		});
 
-	ee.on('info.load', function () {
-		ee.emit('roteiro.init');
-	});
+	// ee.on('info.load', function () {
+	// 	ee.emit('roteiro.init');
+	// });
 
-	info();
+	// info();
 });

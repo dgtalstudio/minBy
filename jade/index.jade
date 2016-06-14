@@ -1,26 +1,43 @@
 extends ./layout.jade
 
 block content
-	.static
-		svg.static__logo
-			use(xlink:href='#minBy')
-		h1.static__slogan
-			span.static__slogan--red Seu condomínio na era 
-			span.static__slogan--gray digital
-		h2.static__slogan.static__slogan--small Em breve
+	- var menuLinks = {digital: 'Digital', gestao: 'Gestão', portal: 'Portal', beneficios: 'Benefícios', contato: 'Contato'}
 
-		.static__disclaimer
-			a(href="http://dgtalstudio.com.br")
-				span Mais um site espetacular feito com a 
-				svg.icon__dgs(preserveAspectRatio='none')
-					use(xlink:href='#dgs')
+	header#headersticky.os-header(role='banner')
+		.os-container
+			svg
+				use(xlink:href='#minBy')
+			nav#menuNavHorizontal
+				ul
+					each v, k in menuLinks
+						li
+							a.linkNavega(href='##{k}')
+								b #{v}
 
-		svg.static__svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
-			polygon.tri(points='0,50 100,0 100,50')
-			polygon.tri.tri--red(points='0,25 100,50 0,50')
+					li.isLogin
+						a(href='http://app.portaldeaplicacoes.com/eCond_UI/' target='_blank')
+							b Login
+
+	#menu.menu
+		.menuLista
+			svg.menuLista__logo
+				use(xlink:href='#minBy')
+			nav#menuNav.menuLista__nav
+				each v, k in menuLinks
+					a.linkNavega.menuLista__item(href='##{k}')
+						span #{v}
+				a.isLogin.menuLista__item(href='http://app.portaldeaplicacoes.com/eCond_UI/' target='_blank')
+					span Login
+	#hamburguer.hamburguer(data-method='add')
+			svg.hamburguer__icon
+				use(xlink:href='#sort')
+	include ./includes/article.jade
+	include ./includes/contato.jade
+	include ./includes/footer.jade				
+	#obfuscator.obfuscator(data-method='remove')
 
 block scripts
 	if (isDev)
-		script(async, src='node_modules/requirejs/require.js', data-main='js/static')
+		script(async, src='node_modules/requirejs/require.js', data-main='js/app')
 	else
-		script(async, src='js/static.min.js')
+		script(async, src='js/app.min.js?rnd=#{Math.random()}')

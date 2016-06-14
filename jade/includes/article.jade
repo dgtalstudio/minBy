@@ -1,3 +1,6 @@
+header.condominioHeader
+
+
 article#digital.contentInfo
 	h1.info__title!= info[0].titulo
 	p!= info[0].chamada
@@ -14,9 +17,8 @@ article#digital.contentInfo
 					h2.features__title #{v.title}
 					p.features__txt #{v.txt}
 
+.tri.tri__bl.tri__bl--red
 #gestao.contentInfo--red
-	svg.tri-svg.tri-svg--top(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
-		polygon.tri--white(points='0,0 100,0 100,50')
 	article.contentInfo.contentInfo--red
 		h1.info__title.info__title--white!= info[1].titulo
 		p.info__chamada--white!= info[1].chamada
@@ -29,9 +31,7 @@ article#digital.contentInfo
 								use(xlink:href='##{v.icon}')
 						.media__body
 							p.lista__txt.lista__txt--white #{v.txt}
-
-svg.tri-svg.tri-svg--bottom(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
-	polygon.tri--red(points='0,0 100,0 0,50')
+.tri.tri__tl.tri__tl--red
 
 article#portal.contentInfo
 	h1.info__title!= info[2].titulo
@@ -46,10 +46,8 @@ article#portal.contentInfo
 					.media__body
 						p.lista__txt #{v.txt}
 
+.tri.tri__bl.tri__bl--gray
 #beneficios.contentInfo--gray
-	svg.tri-svg.tri-svg--top(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
-		polygon.tri--white(points='0,0 100,0 100,50')
-
 	article.contentInfo.contentInfo--gray
 		h1.info__title.info__title--white!= info[3].titulo
 		p.info__chamada--white!= info[3].chamada
@@ -62,6 +60,4 @@ article#portal.contentInfo
 								use(xlink:href='##{v.icon}')
 						.media__body
 							p.lista__txt.lista__txt--white #{v.txt}
-
-svg.tri-svg.tri-svg--bottom(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 50', preserveAspectRatio='none')
-	polygon.tri--gray(points='0,0 100,0 0,50')
+.tri.tri__tl.tri__tl--gray
