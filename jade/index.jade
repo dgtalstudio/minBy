@@ -2,6 +2,7 @@ extends ./layout.jade
 
 block content
 	- var menuLinks = {digital: 'Digital', gestao: 'Gestão', portal: 'Portal', beneficios: 'Benefícios', contato: 'Contato'}
+	- var linkLogin = 'http://www.minby.com.br/login.php'
 
 	header#headersticky.os-header(role='banner')
 		.os-container
@@ -15,7 +16,7 @@ block content
 								b #{v}
 
 					li.isLogin
-						a(href='http://app.portaldeaplicacoes.com/eCond_UI/' target='_blank')
+						a(href='#{linkLogin}' target='_blank')
 							b Login
 
 	#menu.menu
@@ -26,7 +27,7 @@ block content
 				each v, k in menuLinks
 					a.linkNavega.menuLista__item(href='##{k}')
 						span #{v}
-				a.isLogin.menuLista__item(href='http://app.portaldeaplicacoes.com/eCond_UI/' target='_blank')
+				a.isLogin.menuLista__item(href='#{linkLogin}' target='_blank')
 					span Login
 	#hamburguer.hamburguer(data-method='add')
 			svg.hamburguer__icon

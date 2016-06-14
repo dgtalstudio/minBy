@@ -17,7 +17,8 @@ SERVER="ftp.minby.hospedagemdesites.ws"
 # SERVER="minby.dgtalstudio.com"
 
 npm run prod
-rsync $LOCAL_FOLDER/. minby@$SERVER:$DEPLOY_FOLDER --rsh ssh --recursive --delete --exclude-from $CURR_FOLDER/.rsync-exclude --verbose > .rsync.log
+# rsync $LOCAL_FOLDER/. minby@$SERVER:$DEPLOY_FOLDER --rsh ssh --recursive --delete --exclude-from $CURR_FOLDER/.rsync-exclude --verbose > .rsync.log
+rsync $LOCAL_FOLDER/. minby@$SERVER:$DEPLOY_FOLDER -azl -e ssh --recursive --exclude-from $CURR_FOLDER/.rsync-exclude --verbose > .rsync.log
 # rsync $LOCAL_FOLDER/. $SERVER:$DEPLOY_FOLDER --rsh ssh --recursive --delete --exclude-from $CURR_FOLDER/.rsync-exclude --verbose > .rsync.log
 
 

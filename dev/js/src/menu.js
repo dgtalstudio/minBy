@@ -48,7 +48,7 @@ define([
 			if (go) {
 				onToggle(null);
 				ee.emit('menu.navega', 'removeEventListener');
-				Tween.to(window, 3, {
+				Tween.to(window, 1, {
 					scrollTo: {
 						y: go.offsetTop,
 						onAutoKill: gsapFinish
