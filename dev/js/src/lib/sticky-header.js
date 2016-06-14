@@ -29,21 +29,19 @@ define(['src/lib/broadcast'], function (broadcast) {
 
 	// https://developer.mozilla.org/nl/docs/Web/CSS/transform-function
 	function updateMatrix(y) {
-		// m.translate(0, y, 0);
-		// m.m24 = y;
-		// console.info(m.toString());
-		// return m.toString();
-		// a1 a2 a3 a4
-		// b1 b2 b3 b4
-		// c1 c2 c3 c4
-		// d1 d2 d3 d4
-		//
 		// a c 0 tx
 		// b d 0 ty
 		// 0 0 1 0
 		// 0 0 0 1
+		//
+		// a1 a2 a3 a4
+		// b1 b2 b3 b4
+		// c1 c2 c3 c4
+		// d1 d2 d3 d4
 		// matrix3d(a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4)
 		//
+		//
+		// 2d
 		// a c ty
 		// b d tx
 		// 0 0 1

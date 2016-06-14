@@ -50,7 +50,7 @@ define([
 				ee.emit('menu.navega', 'removeEventListener');
 				Tween.to(window, 1, {
 					scrollTo: {
-						y: go.offsetTop,
+						y: go.offsetTop - 70,
 						onAutoKill: gsapFinish
 					},
 					onComplete: gsapFinish
