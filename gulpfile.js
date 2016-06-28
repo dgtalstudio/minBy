@@ -27,5 +27,7 @@ gulp.task('build', gulp.series(
 	'default',
 	almond.task,
 	cp.task.bind(cp, 'images/**/*', 'images'),
-	cp.task.bind(cp, '*.ico', '.')
+	cp.task.bind(cp, 'composer.json', '.'),
+	cp.task.bind(cp, '*.php', '.'),
+	cp.task.bind(cp, 'vendor/**/*', 'vendor')
 ));

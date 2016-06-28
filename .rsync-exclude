@@ -11,7 +11,7 @@ package.json
 /stylus
 /tools
 /node_modules
-/public/vendor
+# /public/vendor
 /public/composer.lock
 /public/.gitignore
 

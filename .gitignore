@@ -1,6 +1,8 @@
 dev/css
 dev/*.htm*
+dev/vendor
 node_modules
+public
 
 # Others
 cgi-bin
